@@ -54,10 +54,25 @@ class App extends React.Component {
     })
   }
 
+  changeStatus = task => {
+    // const todo = this.state.todos.filter(todo => task.id === todo.id)
+    // console.log(todo[0].completed)
+    // ^-- initially started with filter because of building off clearCompleted
+    // realizing map made more sense was an Aha! moment
+
+    const todos = this.state.todos.map(todo => {
+      if (task.id === todo.id) todo.completed = !todo.completed;
+      // console.log(todo)
+      return todo
+    })
+    this.setState({todos: todos})
+  }
+
   render() {
     return (
       <div>
         <TodoList 
+          changeStatus={this.changeStatus}
           todos={this.state.todos}
         />
         <TodoForm

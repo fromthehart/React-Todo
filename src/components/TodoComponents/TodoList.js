@@ -9,6 +9,7 @@ const TodoList = props => {
     <div>
       {props.todos.map(todo => (
         <Todo
+          changeStatus={props.changeStatus}
           todo={todo}
         />
       ))}

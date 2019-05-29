@@ -2,7 +2,7 @@ import React from 'react'
 
 const Todo = props => {
   return (
-    <div>{props.todo.task}</div>
+    <div onClick={() => props.changeStatus(props.todo)}>{props.todo.task}</div>
   )
 }
 
