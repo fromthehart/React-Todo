@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Todo = props => {
-  const className=props.todo.completed === true ? 'completed' : ''
+  const completionStatus=props.todo.completed === true ? 'todo completed' : 'todo incomplete'
   
   return (
     <div 
-      className={className}
-      onClick={() => props.changeStatus(props.todo)}>{props.todo.task}
+      className={completionStatus}
+      onClick={() => props.changeStatus(props.todo)}><span>{props.todo.task}</span>
     </div>
   )
 }

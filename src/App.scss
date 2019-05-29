@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url(./images/serene-waters.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 2rem;
+
+  form {
+    width: 100%;
+    max-width: 350px;
+    margin: 25px auto;
+  }
+
+  input {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 2.2rem;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+  }
+
+  .button-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;  
+
+    button {
+      width: 100%;
+      height: 65px;
+      margin: 0 10px;
+      border-radius: 0;
+      background: lightblue;
+      font-size: 2rem;
+      vertical-align: top;
+      pointer: cursor;
+      user-select: none;
+      color: white;
+      text-shadow: 0 0 0.2em lightcoral;
+      transition: all 0.3s;
+      &:hover {
+        color: lightyellow;
+        background: lightpink;
+        text-shadow: 0 0 0.2em lightyellow;
+      }
+    }
+  }
+
+}

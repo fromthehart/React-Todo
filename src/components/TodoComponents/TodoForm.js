@@ -9,8 +9,10 @@ const TodoForm = props => {
         placeholder='…todo'
         value={props.value}
       />
-      <button onClick={props.onAddTodo}>Add Todo</button>
-      <button onClick={props.onCompleteTodos}>Clear Completed</button>
+      <div className='button-box'>
+        <button onClick={props.onAddTodo}>Add Todo</button>
+        <button onClick={props.onCompleteTodos}>Clear Completed</button>
+      </div>
     </form>
   )
 }

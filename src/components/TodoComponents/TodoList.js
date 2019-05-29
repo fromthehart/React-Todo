@@ -3,11 +3,12 @@
 
 import React from 'react'
 import Todo from './Todo'
-import './Todo.css'
+import './Todo.scss'
 
 const TodoList = props => {
   return (
-    <div>
+    <div className="todos-container">
+      <h1>Serenity Soon</h1>
       {props.todos.map(todo => (
         <Todo
           changeStatus={props.changeStatus}

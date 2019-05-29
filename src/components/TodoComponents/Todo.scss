@@ -1,0 +1,40 @@
+
+.todos-container {
+  text-align: center;
+
+  h1 {
+    font-size: 4.8rem;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    text-shadow: 0 0 0.2em lightcoral;
+    user-select: none;
+  }
+
+  .todo {
+    font-size: 2.6em;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    text-shadow: 0 0 0.2em lightcoral;
+
+    &.incomplete:before {
+      margin-right: 10px;
+      content: '☐';
+    }
+    
+    .incomplete span {
+      color: black;
+    }
+
+    &.completed:before {
+      margin-right: 10px;
+      content: '☑';
+    }
+    &.completed span {
+      text-decoration: line-through;
+    }
+  }
+}
+
+
