@@ -21,13 +21,15 @@ class App extends React.Component {
     }
   }
 
-  addTodo() {
+  addTodo = e => {
+    e.preventDefault();
     this.setState({
 
     })
   }
 
-  clearCompleted() {
+  clearCompleted = e => {
+    e.preventDefault();
     this.setState({
 
     })
