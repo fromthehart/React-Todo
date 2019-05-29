@@ -8,28 +8,14 @@ class App extends React.Component {
     super()
 
     // Try to load persisted todo list from local storage, or will be empty if not found
-    let saved = JSON.parse(localStorage.getItem('todos'))
+    let saved = null
+    try {
+      saved = JSON.parse(localStorage.getItem('todos'))
+    } catch(e) {}
 
     // Initialize state with either our persisted data or empty
     this.state={
       todos: saved,
-        // [
-        // {
-        //   task: 'Eat Breakfast',
-        //   id: 314159265358979323846,
-        //   completed: true
-        // },
-        // {
-        //   task: 'React Todo Day 1 MVP',
-        //   id: 1528817077286,
-        //   completed: false
-        // },
-        // {
-        //   task: 'React Todo Day 2 MVP',
-        //   id: 1528817084358,
-        //   completed: false
-        // }
-      // ],
       todo: ''
     }
     // console.log(this.state)
