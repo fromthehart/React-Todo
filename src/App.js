@@ -17,12 +17,18 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         }
-      ]
+      ],
+      todo: ''
     }
   }
 
   addTodo = e => {
     e.preventDefault();
+    const todoEntry = {
+      task: this.state.todo,
+      id: Date.now(),
+      completed: false
+    }
     this.setState({
 
     })
@@ -35,11 +41,16 @@ class App extends React.Component {
     })
   }
 
+  formUpdate = e => {
+    console.log(e)
+  }
+
   render() {
     return (
       <div>
         <TodoList />
         <TodoForm
+          onInput={this.formUpdate}
           onAddTodo={this.addTodo}
           onCompleteTodos={this.clearCompleted}
           value={this.state.todo}
