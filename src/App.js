@@ -30,7 +30,8 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-
+      todos: [...this.state.todos, todoEntry],
+      todo: ''
     })
   }
 
