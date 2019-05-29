@@ -5,26 +5,41 @@ import TodoForm from './components/TodoComponents/TodoForm';
 class App extends React.Component {
   constructor() {
     super()
-    this.state={
-      todos: [
+
+    // Try to load persisted todo list from local storage, and set a default task if not found
+    let saved = JSON.parse(localStorage.getItem('todos'))
+    if (!saved) {
+      saved = [
         {
-          task: 'Eat Breakfast',
-          id: 314159265358979323846,
-          completed: true
-        },
-        {
-          task: 'React Todo Day 1 MVP',
-          id: 1528817077286,
-          completed: false
-        },
-        {
-          task: 'React Todo Day 2 MVP',
-          id: 1528817084358,
+          task: 'Make a todo list',
+          id: 1559164600105,
           completed: false
         }
-      ],
+      ]
+    }
+    // Initialize state with either our persisted data or the default task
+    this.state={
+      todos: saved,
+        // [
+        // {
+        //   task: 'Eat Breakfast',
+        //   id: 314159265358979323846,
+        //   completed: true
+        // },
+        // {
+        //   task: 'React Todo Day 1 MVP',
+        //   id: 1528817077286,
+        //   completed: false
+        // },
+        // {
+        //   task: 'React Todo Day 2 MVP',
+        //   id: 1528817084358,
+        //   completed: false
+        // }
+      // ],
       todo: ''
     }
+    // console.log(this.state)
   }
 
   addTodo = e => {
@@ -68,7 +83,12 @@ class App extends React.Component {
     this.setState({todos: todos})
   }
 
+  persist = () => {
+    localStorage.setItem('todos', JSON.stringify(this.state.todos))
+  }
+
   render() {
+    this.persist()
     return (
       <div>
         <TodoList 

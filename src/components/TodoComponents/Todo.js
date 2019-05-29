@@ -2,7 +2,7 @@ import React from 'react'
 
 const Todo = props => {
   const className=props.todo.completed === true ? 'completed' : ''
-  console.log(className)
+  
   return (
     <div 
       className={className}
