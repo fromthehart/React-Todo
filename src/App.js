@@ -8,6 +8,11 @@ class App extends React.Component {
     this.state={
       todos: [
         {
+          task: 'Eat Breakfast',
+          id: 314159265358979323846,
+          completed: true
+        },
+        {
           task: 'React Todo Day 1 MVP',
           id: 1528817077286,
           completed: false
@@ -38,7 +43,7 @@ class App extends React.Component {
   clearCompleted = e => {
     e.preventDefault();
     this.setState({
-
+      todos: this.state.todos.filter(todo => todo.completed === false)
     })
   }
 
