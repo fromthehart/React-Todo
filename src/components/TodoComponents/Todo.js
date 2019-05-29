@@ -1,8 +1,13 @@
 import React from 'react'
 
 const Todo = props => {
+  const className=props.todo.completed === true ? 'completed' : ''
+  console.log(className)
   return (
-    <div onClick={() => props.changeStatus(props.todo)}>{props.todo.task}</div>
+    <div 
+      className={className}
+      onClick={() => props.changeStatus(props.todo)}>{props.todo.task}
+    </div>
   )
 }
 
