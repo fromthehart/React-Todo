@@ -51,7 +51,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList 
+          todos={this.state.todos}
+        />
         <TodoForm
           onInput={this.formUpdate}
           onAddTodo={this.addTodo}
