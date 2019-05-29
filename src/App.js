@@ -5,7 +5,7 @@ import TodoForm from './components/TodoComponents/TodoForm';
 class App extends React.Component {
   constructor() {
     super()
-    this.state = {
+    this.state={
       todos: [
         {
           task: 'React Todo Day 1 MVP',
@@ -37,7 +37,11 @@ class App extends React.Component {
     return (
       <div>
         <TodoList />
-        <TodoForm />
+        <TodoForm
+          onAddTodo={this.addTodo}
+          onCompleteTodos={this.clearCompleted}
+          value={this.state.todo}
+        />
       </div>
     );
   }
