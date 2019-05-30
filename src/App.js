@@ -41,7 +41,7 @@ class App extends React.Component {
       this.setState({
         todos: [...this.state.todos, todoEntry],
         todo: ''
-      })
+      }, this.persist)
     }
   }
 
@@ -49,7 +49,7 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       todos: this.state.todos.filter(todo => todo.completed === false)
-    })
+    }, this.persist)
   }
 
   formUpdate = e => {
@@ -70,15 +70,15 @@ class App extends React.Component {
       // console.log(todo)
       return todo
     })
-    this.setState({todos: todos})
+    this.setState({todos: todos}, this.persist)
   }
 
   persist = () => {
     localStorage.setItem('todos', JSON.stringify(this.state.todos))
   }
 
-  render() {
-    this.persist()
+  render = () => {
+    // this.persist()
     return (
       <div className="container">
         <TodoList 
