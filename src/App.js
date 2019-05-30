@@ -10,7 +10,7 @@ class App extends React.Component {
     // Try to load persisted todo list from local storage, or set a default task if not found
 
     let todos = JSON.parse(localStorage.getItem('todos'))
-
+    
     try {
       const nullCheck = todos.length;
     } catch(e) {
@@ -40,18 +40,22 @@ class App extends React.Component {
       completed: false
     }
     if (todoEntry.task) {
-      this.setState({
-          todos: [...this.state.todos, todoEntry],
-          todo: ''
-      }, this.persist)
-   }
+      // this.setState({
+      //     todos: [...this.state.todos, todoEntry],
+      //     todo: ''
+      // }, this.persist)
+      this.setState(prevState => ({
+        todos: [...prevState.todos, todoEntry],
+        todo: ''
+      }))
+    }
   }
 
   clearCompleted = e => {
     e.preventDefault();
-    this.setState({
-      todos: this.state.todos.filter(todo => todo.completed === false)
-    }, this.persist)
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.completed === false)
+    }))
   }
 
   formUpdate = e => {
@@ -68,11 +72,10 @@ class App extends React.Component {
     // realizing map made more sense was an Aha! moment
 
     const todos = this.state.todos.map(todo => {
-      if (task.id === todo.id) todo.completed = !todo.completed;
-      // console.log(todo)
+      if (task.id === todo.id) todo.completed = !todo.completed
       return todo
     })
-    this.setState({todos: todos}, this.persist)
+    this.setState(prevState => ({todos}))
   }
 
   persist = () => {
@@ -80,8 +83,7 @@ class App extends React.Component {
   }
 
   render = () => {
-    // this.persist()
-    // console.log(this.state.search)
+    this.persist()
     return (
       <div className="container">
         <TodoList 

@@ -7,7 +7,7 @@ import './Todo.scss'
 
 const TodoList = props => {
   const filteredList = props.todos.filter(todo => todo.task.toLowerCase().includes(props.search.toLowerCase()))
-  console.log(filteredList)
+  // console.log(filteredList)
   return (
     <div className="todos-container">
       <h1>Serenity {props.todos.length > 0 ? 'Soon' : 'Now'}</h1>
