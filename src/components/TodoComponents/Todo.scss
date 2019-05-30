@@ -6,8 +6,8 @@
     font-size: 4.8rem;
     font-weight: bold;
     font-family: cursive;
-    color: white;
-    text-shadow: 0 0 0.2em lightcoral;
+    color: lightskyblue;
+    text-shadow: 0 0 0.02em grey;
     user-select: none;
   }
 
@@ -16,9 +16,11 @@
     font-weight: bold;
     font-family: cursive;
     color: white;
-    text-shadow: 0 0 0.2em lightcoral;
+    text-shadow: 0 0 0.02em grey;
+    user-select: none;
 
     &.incomplete:before {
+
       margin-right: 10px;
       content: '☐';
     }
@@ -28,10 +30,12 @@
     }
 
     &.completed:before {
+      color: greenyellow;
       margin-right: 10px;
       content: '☑';
     }
     &.completed span {
+      color: lightgray;
       text-decoration: line-through;
     }
   }

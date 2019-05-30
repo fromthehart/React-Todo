@@ -25,7 +25,8 @@ class App extends React.Component {
     // Initialize state with either our persisted data or the default task
     this.state={
       todos: saved,
-      todo: ''
+      todo: '',
+      search: ''
     }
     // console.log(this.state)
   }
@@ -77,17 +78,20 @@ class App extends React.Component {
 
   render = () => {
     // this.persist()
+    // console.log(this.state.search)
     return (
       <div className="container">
         <TodoList 
           changeStatus={this.changeStatus}
           todos={this.state.todos}
+          search={this.state.search}
         />
         <TodoForm
           onInput={this.formUpdate}
           onAddTodo={this.addTodo}
           onCompleteTodos={this.clearCompleted}
-          value={this.state.todo}
+          todo={this.state.todo}
+          search={this.state.search}
         />
       </div>
     );

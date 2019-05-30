@@ -27,6 +27,7 @@ body {
   }
 
   input {
+    margin: 10px auto;
     width: 100%;
     display: block;
     text-align: center;
@@ -40,14 +41,14 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;  
+    padding: 10px 0;  
 
     button {
       width: 100%;
       height: 65px;
       margin: 0 10px;
       border-radius: 0;
-      background: lightblue;
+      background: lightskyblue;
       font-size: 2rem;
       vertical-align: top;
       pointer: cursor;
@@ -58,7 +59,7 @@ body {
       &:hover {
         color: lightyellow;
         background: lightpink;
-        text-shadow: 0 0 0.2em lightyellow;
+        text-shadow: 0 0 0.2em gray;
       }
     }
   }

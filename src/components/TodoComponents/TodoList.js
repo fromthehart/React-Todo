@@ -6,10 +6,12 @@ import Todo from './Todo'
 import './Todo.scss'
 
 const TodoList = props => {
+  const filteredList = props.todos.filter(todo => todo.task.includes(props.search))
+  console.log(filteredList)
   return (
     <div className="todos-container">
       <h1>Serenity {props.todos.length > 0 ? 'Soon' : 'Now'}</h1>
-      {props.todos.map(todo => (
+      {filteredList.map(todo => (
         <Todo
           changeStatus={props.changeStatus}
           todo={todo}
