@@ -38,10 +38,12 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     }
-    this.setState({
-        todos: [...this.state.todos, todoEntry],
-        todo: ''
-    }, this.persist)
+    if (todoEntry.task) {
+      this.setState({
+          todos: [...this.state.todos, todoEntry],
+          todo: ''
+      }, this.persist)
+   }
   }
 
   clearCompleted = e => {

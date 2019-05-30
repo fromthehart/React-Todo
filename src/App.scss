@@ -35,6 +35,10 @@ body {
     font-size: 2.2rem;
     color: dodgerblue;
     border: 1px solid dodgerblue;
+    &:focus {
+      outline: none;
+      border: 2px solid dodgerblue;
+    }
   }
 
   .button-box {
@@ -54,12 +58,15 @@ body {
       pointer: cursor;
       user-select: none;
       color: white;
-      text-shadow: 0 0 0.2em lightcoral;
+      text-shadow: 0 0 0.2em dodgerblue;
       transition: all 0.3s;
       &:hover {
         color: lightyellow;
         background: lightpink;
-        text-shadow: 0 0 0.2em gray;
+      }
+      &:focus {
+        outline: none;
+        border: 2px solid dodgerblue;
       }
     }
   }
