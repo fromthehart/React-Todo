@@ -7,29 +7,24 @@ class App extends React.Component {
   constructor() {
     super()
 
-    // Try to load persisted todo list from local storage, or will be empty if not found
-    // let saved = JSON.parse(localStorage.getItem('todos'))
+    // Try to load persisted todo list from local storage, or set a default task if not found
 
-    // Initialize state with either our persisted data or empty
+    let saved = JSON.parse(localStorage.getItem('todos'))
+    try {
+      let nullCheck = saved.length;
+    } catch(e) {
+      saved = [
+        {
+          task: "Start a to-do list",
+          id: Date.now(),
+          completed: false
+        }
+      ]
+    }
+
+    // Initialize state with either our persisted data or the default task
     this.state={
-      // todos: saved,
-        [
-          {
-            task: 'Eat Breakfast',
-            id: 314159265358979323846,
-            completed: true
-          },
-          {
-            task: 'React Todo Day 1 MVP',
-            id: 1528817077286,
-            completed: false
-          },
-          {
-            task: 'React Todo Day 2 MVP',
-            id: 1528817084358,
-            completed: false
-          }
-        ],
+      todos: saved,
       todo: ''
     }
     // console.log(this.state)
@@ -42,7 +37,7 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     }
-    if (todoEntry.task.trim !== '') {
+    if (todoEntry.task.trim() !== '') {
       this.setState({
         todos: [...this.state.todos, todoEntry],
         todo: ''
