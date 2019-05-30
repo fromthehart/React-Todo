@@ -33,16 +33,14 @@ class App extends React.Component {
   addTodo = e => {
     e.preventDefault();
     const todoEntry = {
-      task: this.state.todo,
+      task: this.state.todo.trim(),
       id: Date.now(),
       completed: false
     }
-    if (todoEntry.task.trim() !== '') {
-      this.setState({
+    this.setState({
         todos: [...this.state.todos, todoEntry],
         todo: ''
-      }, this.persist)
-    }
+    }, this.persist)
   }
 
   clearCompleted = e => {
