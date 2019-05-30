@@ -9,11 +9,12 @@ class App extends React.Component {
 
     // Try to load persisted todo list from local storage, or set a default task if not found
 
-    let saved = JSON.parse(localStorage.getItem('todos'))
+    let todos = JSON.parse(localStorage.getItem('todos'))
+
     try {
-      let nullCheck = saved.length;
+      const nullCheck = todos.length;
     } catch(e) {
-      saved = [
+      todos = [
         {
           task: "Start a to-do list",
           id: Date.now(),
@@ -24,7 +25,7 @@ class App extends React.Component {
 
     // Initialize state with either our persisted data or the default task
     this.state={
-      todos: saved,
+      todos,
       todo: '',
       search: ''
     }

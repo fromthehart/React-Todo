@@ -4,6 +4,7 @@ const TodoForm = props => {
   return (
     <form onSubmit={props.onAddTodo}>
       <input
+        type='text'
         name='todo'
         onChange={props.onInput}
         placeholder='…todo'
@@ -14,6 +15,7 @@ const TodoForm = props => {
         <button onClick={props.onCompleteTodos}>Clear Completed</button>
       </div>
       <input
+        type='text'
         name='search'
         onChange={props.onInput}
         placeholder='search…'
