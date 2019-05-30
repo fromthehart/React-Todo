@@ -7,7 +7,7 @@
     font-weight: bold;
     font-family: cursive;
     color: lightskyblue;
-    text-shadow: 0 0 0.02em dodgerblue;
+    text-shadow: 0 0 0.05em lightblue;
     user-select: none;
   }
 
@@ -16,7 +16,7 @@
     font-weight: bold;
     font-family: cursive;
     color: white;
-    text-shadow: 0 0 0.15em gray;
+    text-shadow: 0 0 0.05em gray;
     user-select: none;
 
     &.incomplete:before {

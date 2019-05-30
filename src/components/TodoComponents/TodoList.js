@@ -6,7 +6,7 @@ import Todo from './Todo'
 import './Todo.scss'
 
 const TodoList = props => {
-  const filteredList = props.todos.filter(todo => todo.task.includes(props.search))
+  const filteredList = props.todos.filter(todo => todo.task.toLowerCase().includes(props.search.toLowerCase()))
   console.log(filteredList)
   return (
     <div className="todos-container">
