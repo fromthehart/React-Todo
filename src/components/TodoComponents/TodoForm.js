@@ -14,6 +14,7 @@ class TodoForm extends React.Component {
           onChange={this.props.onInput}
           placeholder='…todo'
           value={this.props.todo}
+          required
         />
         <div className='button-box'>
           <button onClick={this.props.onAddTodo}>Add Todo</button>
