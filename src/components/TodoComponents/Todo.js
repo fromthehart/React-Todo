@@ -1,14 +1,18 @@
 import React from 'react'
 
-const Todo = props => {
-  const completionStatus=props.todo.completed === true ? 'todo completed' : 'todo incomplete'
-  
-  return (
-    <div 
-      className={completionStatus}
-      onClick={() => props.changeStatus(props.todo)}><span>{props.todo.task}</span>
-    </div>
-  )
+class Todo extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render = () => {
+    return (
+      <div 
+        className={this.props.todo.completed === true ? 'todo completed' : 'todo incomplete'}
+        onClick={() => this.props.changeStatus(this.props.todo)}><span>{this.props.todo.task}</span>
+      </div>    
+    )
+  }
 }
 
 export default Todo;

@@ -8,7 +8,6 @@ class App extends React.Component {
     super()
 
     // Try to load persisted todo list from local storage, or set a default task if not found
-
     const storage = localStorage.getItem('todos')
     let todos = []
     if (storage) {
@@ -65,6 +64,7 @@ class App extends React.Component {
 
   clearCompleted = e => {
     e.preventDefault();
+    // e.stopPropagation();
     this.setState(prevState => ({
       todos: prevState.todos.filter(todo => todo.completed === false)
     }))
@@ -84,10 +84,13 @@ class App extends React.Component {
     // realizing map made more sense was an Aha! moment
 
     const todos = this.state.todos.map(todo => {
-      if (task.id === todo.id) todo.completed = !todo.completed
+      if (task.id === todo.id) {
+        todo.completed = !todo.completed
+      }
       return todo
     })
     this.setState(prevState => ({todos}))
+    // this.setState(this.setState({todos}), this.persist)
   }
 
   persist = () => {
